@@ -7,29 +7,34 @@
 - 
 
 Pseudocode Input
-A program that prints all numbers up to an inputted number might look:
-    1 When the user inputs a number
-    2 Initialize a counter variable and set its value to zero
-    3 While counter is smaller than user inputted number incremented the 
-      counter by one.
-    4 Print the value of the counter variable
+A program that creates a game played entirely in the console:
+    1 Game played against the computer.
+    2 A funtion that randomly returns "rock", "paper" or "scissors".
+    3 Create a new function named getComputerChoice
+    4 getComputerChoice will randomly return "rock", "paper" or "scissors".
+      (Hint Math.random to conditionally return one of the multiple choices).
+    5 Test function returns expected results using console.log
+    6 Step 3 Write the logic to get human choice
+    7 Create a new function named getHumanChoice
+    8 getHumanChoice to return one of the valid choices depending on user input
+      (Hint use the prompt method to get user input, assume user always enters valid input)
+    9 Test function returns expected results using console.log
+
 
 - Plan
-Browser console program - no interface
-Only user interaction user entering a number 
-Input user will enter number from a prompt (popup box)
-Output is a list of numbers from 1 to number user entered
-Numbers divisable by 3 output Fizz
-Numbers divisable by 5 output Buzz
-Numbers divisable by 3 and 5 output FizzBuzz
+Calculate random number range 1 to 3
+Create new function named getComputerChoice
+If randomNumber is 1 console.log "Rock"
+If randomNumber is 2 console.log "Paper"
+If randomNumber is 3 console.log "Scissors"
+
 
 Pseudocode Output
-    1 When a user inputs a number
-    2 Loop from 1 to entered number
-    3 If the current number is divisible by 3 then print "Fizz"
-    4 If the current number is divisible by 5 then print "Buzz"
-    5 If the current number is divisible by 3 and 5 then print "FizzBuzz"
-    6 Otherwise print the current number
+Calculate random number range 1 to 3
+Create new function named getComputerChoice
+If randomNumber is 1 console.log "Rock"
+If randomNumber is 2 console.log "Paper"
+If randomNumber is 3 console.log "Scissors"
 
 Divide and Conquering
 
