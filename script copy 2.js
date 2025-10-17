@@ -1,16 +1,6 @@
   console.log("Hello Madelaine");
 
-  // 
-    function playGame() {
- 
-    // Declare variables for keeping scores
-  let humanScore = 0;
-  let computerScore = 0;
-
-
-
-    for (let i = 0; i < 5; i++) {
-        console.log(`---- Game ${i + 1} ----`);
+  // Prior to moving playGame to be looped 5 times
 
   // Prompt for user to enter their choice
   let humanInput = prompt("Please enter Rock, Paper or Scissors:");
@@ -50,8 +40,16 @@
   
   // Function that calls playRound 5 times, playRound function
   // and score variables moved and declared inside playGame function
-  // moved 44 - 53
-  
+  function playGame() {
+ 
+    // Declare variables for keeping scores
+  let humanScore = 0;
+  let computerScore = 0;
+
+
+
+    for (let i = 0; i < 5; i++) {
+        console.log(`---- Game ${i + 1} ----`);
     
   // Inner function called here
   // Function takes human and computer choices as argumets
