@@ -34,6 +34,8 @@ A program that creates a game played entirely in the console:
     17 Increments the round winner's score
     18 Logs a winner announcement
 
+    19 Step 6 
+
 
 
 
@@ -54,8 +56,9 @@ Declare computerScore and initialize to 0
 //Play a single round
 Create Function playRound
 Define parameters humanChoice and computerChoice for playRound 
+
 Parameters to take human and computer choices as arguments
-humanChoice parameter case-insensitive
+Make humanChoice parameter case-insensitive
 write code for playRound to console.log a string value for round winner
 "You lose! Paper beats Rock"
 Increment humanScore or computerScore variable based on the round winner
