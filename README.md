@@ -34,7 +34,9 @@ A program that creates a game played entirely in the console:
     17 Increments the round winner's score
     18 Logs a winner announcement
 
-    19 Step 6 
+    19 Step 6 Write the logic to play the entire game
+    20 Create a function playGame that calls playRound to play 5 rounds
+    21 Keep track of scores and declares winner at end
 
 
 
@@ -63,7 +65,11 @@ write code for playRound to console.log a string value for round winner
 "You lose! Paper beats Rock"
 Increment humanScore or computerScore variable based on the round winner
 
-
+Create new function playGame
+Move playRound function to be declared inside new playGame function
+Move human score variable to be declared in playGame function 
+Move computer score variable to be declared in playGame function 
+Play 5 rounds calling playRound 5 times
 
 Divide and Conquering
 

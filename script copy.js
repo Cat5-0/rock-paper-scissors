@@ -1,9 +1,12 @@
   console.log("Hello Madelaine");
 
-  // 
+  // Declare variables for keeping scores
+  let humanScore = 0;
+  let computerScore = 0;
 
   // Prompt for user to enter their choice
   let humanInput = prompt("Please enter Rock, Paper or Scissors:");
+  let humanInputToLowerCase = humanInput.toLowerCase();
 
   // Random number generated
   let randomNumber = Math.floor(Math.random() * 3) + 1;
@@ -26,7 +29,6 @@
 
   // Function to display human choice that was prompted for
   function getHumanChoice() {
-    let humanInputToLowerCase = humanInput.toLowerCase();
     if (humanInputToLowerCase === "rock") {
         console.log("Rock");
     } else if (humanInputToLowerCase === "paper") {
@@ -37,37 +39,10 @@
   }
   getHumanChoice();
 
-  
-  // Function that calls playRound 5 times, playRound function
-  // and score variables moved and declared inside playGame function
-  function playGame() {
-// Declare variables for keeping scores
-  let humanScore = 0;
-  let computerScore = 0;
-
-
-
-    for (let i = 0; i < 5; i++) {
-        console.log(`---- Game ${i + 1} ----`);
-    
-  // Inner function called here
   // Function takes human and computer choices as argumets
   // plays a single round, increments the round winner score 
   // and logs a winner announcement
-  function playRound(humanChoice, computerChoice) {
-    
-    // function generateChoice() {
-    //     let randomNumber = Math.floor(Math.random() * 3) + 1;
-    //     getComputerChoice();
-    //     console.log(`New computer selection ${compChoice}`);
-    //     let humanInput = prompt("Please enter Rock, Paper or Scissors:");
-    //     let humanInputToLowerCase = humanInput.toLowerCase();
-    //     getHumanChoice();
-    //     console.log(`New human selection ${humanInputToLowerCase}`);
-    // }
-    // generateChoice();
-    
-    let humanInputToLowerCase = humanInput.toLowerCase();
+   function playRound(humanChoice, computerChoice) {
     if (humanInputToLowerCase === compChoice) {
         console.log("Tie selection, please start again");
         //return;
@@ -105,15 +80,18 @@
     let humanScoreTotal = humanScore;
     let computerScoreTotal = computerScore;
     console.log("Humans: ",humanScoreTotal, " Computer: ", computerScoreTotal);
-  }  
+  }
 
   const humanSelection = getHumanChoice();
   const computerSelection = getComputerChoice();
     
   playRound(humanSelection, computerSelection);
  
-
-  }
- 
+// Function that calls playRound 5 times, playRound function
+// and score variables moved and declared inside playGame function
+function playGame() {
+    for (let i = 0; i < 5; i++) {
+        playRound();
+    }
 }
 playGame();
