@@ -18,11 +18,11 @@
   let humanInput = prompt("Please enter Rock, Paper or Scissors:");
   let humanInputToLowerCase = humanInput.toLowerCase();
 
-  // Random number generated
+  // Random number generator
   let randomNumber = Math.floor(Math.random() * 3) + 1;
 
-  // Function for computer choice that displays assigned name 
-  // of generated random number 
+  // Function for computer choice also displays assigned name 
+  // of generated random number
   function getComputerChoice() {
     if (randomNumber === 1) {
         compChoice = "rock";
@@ -37,7 +37,8 @@
   }
   getComputerChoice();
 
-  // Function to display human choice that was prompted for
+  // Function for human choice that was prompted for also displays 
+  // user choice
   function getHumanChoice() {
     let humanInputToLowerCase = humanInput.toLowerCase();
     if (humanInputToLowerCase === "rock") {
@@ -52,8 +53,8 @@
     
 
   // Function takes human and computer choices as argumets
-  // plays a single round, increments the round winner score 
-  // and logs a winner announcement
+  // plays, increments the round winner score and logs
+  // a winner announcement also displays game results
   function playRound(humanChoice, computerChoice) {
     
     let humanInputToLowerCase = humanInput.toLowerCase();
@@ -85,6 +86,7 @@
         computerScore += 1;
         console.log("Computer Scored ", computerScore);
     } 
+    // Calculate scores and display
     let humanScoreTotal = humanScore;
     let computerScoreTotal = computerScore;
     console.log(`Human chose ${humanInputToLowerCase}`);

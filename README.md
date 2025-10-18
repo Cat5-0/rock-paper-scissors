@@ -1,11 +1,5 @@
 # rock-paper-scissors
 
-- Understand the problem
-- Plan
-- Pseudocode
-- Divide and conquer
-- 
-
 Pseudocode Input
 A program that creates a game played entirely in the console:
     1 Game played against the computer.
@@ -38,11 +32,6 @@ A program that creates a game played entirely in the console:
     20 Create a function playGame that calls playRound to play 5 rounds
     21 Keep track of scores and declares winner at end
 
-
-
-
-- Plan
-
 Pseudocode Output
 Calculate random number range 1 to 3
 Create function getComputerChoice
@@ -71,5 +60,5 @@ Move human score variable to be declared in playGame function
 Move computer score variable to be declared in playGame function 
 Play 5 rounds calling playRound 5 times
 
-Divide and Conquering
+
 
