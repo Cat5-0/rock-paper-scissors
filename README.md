@@ -1,4 +1,8 @@
 # rock-paper-scissors
+As per project specifications input needs to be exact words, case is irrelevant.
+You can remove line 4 from index.html that removes the favicon.ico
+To run the JavaScript code from the index.html file in the browser's console
+Open the browser's Developer Console
 
 Pseudocode Input
 A program that creates a game played entirely in the console:
