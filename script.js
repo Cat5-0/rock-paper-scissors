@@ -1,6 +1,6 @@
   console.clear();
   console.log();
-  console.log("Hello Great Player let us begin");
+  console.log("Hello Great Player let us begin - time for UI");
 
   // Function playGame 
   function playGame() {
