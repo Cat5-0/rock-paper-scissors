@@ -1,18 +1,20 @@
+// Function playGame 
+function playGame() {
+
 // Declare variables for keeping scores
 let humanScore = 0;
 let computerScore = 0;
 let total = 0;
 
+// Array of choices for computer random selection
 const choices = ["rock", "paper", "scissors"];
-  
-// Function playGame 
-function playGame() {
-    for (let i = 1; i <= 5; i++) {
-        playRound();
-    } 
-}
+    
+// Loop to play game set number of times
+for (let i = 1; i <= 5; i++) {
+    playRound();
+} 
 
-// Function play round
+// Function play round and sum score totals
 function playRound() {
     const playerSelection = getHumanChoice();
     const computerSelection = getComputerChoice();
@@ -41,8 +43,7 @@ function getHumanChoice() {
     return humanInput;
 }
   
-// Function for computer choice also displays assigned name 
-// of generated random choice
+// Function for computer random choice 
 function getComputerChoice() {
     const computerChoice = choices[Math.floor(Math.random() * choices.length)];
     console.log(`Computer selected ${computerChoice}`);
@@ -65,9 +66,6 @@ function checkWinner(choiceH, choiceC) {
         return "Computer";
     }
 }
-
-function totalScore(totalH, totalC) {
-
 }
 
 playGame();
