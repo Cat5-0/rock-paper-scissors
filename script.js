@@ -1,6 +1,21 @@
 // Function playGame 
 function playGame() {
 
+// Event listener for buttons that will call playRound function with the 
+// correct playerSelection
+
+
+function alertFunction() {
+    const myButton = "rock";
+    console.log("line 10", myButton);
+    alert("Rock has been clicked");
+    // return playRound();
+    playRound(myButton);
+}
+const btnRock = document.querySelector("#btnrock");
+btnRock.addEventListener("click", alertFunction);
+
+
 // Declare variables for keeping scores
 let humanScore = 0;
 let computerScore = 0;
@@ -10,12 +25,13 @@ let total = 0;
 const choices = ["rock", "paper", "scissors"];
     
 // Loop to play game set number of times
-for (let i = 1; i <= 5; i++) {
-    playRound();
+for (let i = 1; i <= 100; i++) {
+    // playRound();
 } 
 
 // Function play round and sum score totals
 function playRound() {
+    console.log("playRound", myButton);
     const playerSelection = getHumanChoice();
     const computerSelection = getComputerChoice();
     const winner = checkWinner(playerSelection, computerSelection);
@@ -35,10 +51,20 @@ function playRound() {
     }
 }
 
+
+
+function btnPaper() {
+
+}
+
+function btnScissors() {
+
+}
+
 // Prompt for user to enter their choice
 function getHumanChoice() {
-    let humanInput = prompt("Please enter Rock, Paper or Scissors:");
-    humanInput = humanInput.toLowerCase();
+    // let humanInput = prompt("Please enter Rock, Paper or Scissors:");
+    // humanInput = humanInput.toLowerCase();
     console.log(`Human selected ${humanInput}`);
     return humanInput;
 }
