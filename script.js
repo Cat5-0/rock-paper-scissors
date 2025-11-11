@@ -1,11 +1,6 @@
 // Function playGame 
 function playGame() {
 
-// Event listener for buttons that will call playRound function with the 
-// correct playerSelection
-
-
-
 // Declare variables for keeping scores
 let humanScore = 0;
 let computerScore = 0;
@@ -15,7 +10,7 @@ let total = 0;
 const choices = ["rock", "paper", "scissors"];
     
 // Loop to play game set number of times
-for (let i = 1; i <= 100; i++) {
+for (let i = 1; i <= 5; i++) {
     playRound();
 } 
 
@@ -39,7 +34,6 @@ function playRound() {
         }
     }
 }
-
 
 // Prompt for user to enter their choice
 function getHumanChoice() {
