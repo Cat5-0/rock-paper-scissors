@@ -17,17 +17,16 @@ const resultDisplay = document.getElementById("resultDisplay");
 
 const playerScoreDisplay = document.getElementById("playerScoreDisplay");
 const computerScoreDisplay = document.getElementById("computerScoreDisplay");
-// const gameOverMessage = document.getElementById("gameOverMessage");
-// const tiedScoreDisplay = document.getElementById("tiedScoreDisplay");
+
 
 // Add event listeners to the buttons
 rockButton.addEventListener('click', () => playRound('rock'));
 paperButton.addEventListener('click', () => playRound('paper'));
 scissorsButton.addEventListener('click', () => playRound('scissors'));
 
+
 // Main game function
 function playRound(playerChoice) {
-    console.log(`Player selected ${playerChoice}`)
     playerDisplay.textContent = `Human: ${playerChoice}`;
     const computerChoice = getComputerChoice();
     computerDisplay.textContent = `Computer: ${computerChoice}`;
@@ -40,7 +39,6 @@ function playRound(playerChoice) {
 function getComputerChoice() {
     const choices = ["rock", "paper", "scissors"];
     const computerChoice = choices[Math.floor(Math.random() * choices.length)];
-    console.log(`Computer selected ${computerChoice}`);
     return computerChoice; // return choices[computerChoice];
 }
 
@@ -88,15 +86,21 @@ function updateMessage(winner, player, computer) {
 // Function to check if the game is over with first to 5 points
 function checkGameOver() {
     if (playerScore >=5 || computerScore >= 5) {
-        console.log(`line 89 ${playerScore} and computer ${computerScore}`);
         const gameOverMessage = playerScore >= 5 ? 'Game over, human won!' : 'Game over, computer won';
         
         gameOver.textContent = gameOverMessage;
         // Disable buttons after the game ends
         rockButton.disabled = true;
         paperButton.disabled = true;
-        scissorsButton.disabled = true;
+        scissorsButton.disabled = true;      
+
     }
+
+function resetButton() {
+    
+}
+
+
 }
 
 
