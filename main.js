@@ -9,7 +9,7 @@ let tiedScore = 0;
 const rockButton = document.getElementById("rock");
 const paperButton = document.getElementById("paper");
 const scissorsButton = document.getElementById("scissors");
-const resetGame = document.getElementById("resetGame");
+const resultMessage = document.getElementById("resultMessage");
 
 const playerDisplay = document.getElementById("playerDisplay");
 const computerDisplay = document.getElementById("computerDisplay");
@@ -22,16 +22,17 @@ const tiedScoreDisplay = document.getElementById("tiedScoreDisplay");
 // Add event listeners to the buttons
 rockButton.addEventListener('click', () => playRound('rock'));
 paperButton.addEventListener('click', () => playRound('paper'));
-scissorsButton.addEventListener('click', () => playRound('scissor'));
+scissorsButton.addEventListener('click', () => playRound('scissors'));
 
 // Main game function
 function playRound(playerChoice) {
     console.log(`Player selected ${playerChoice}`)
+    playerDisplay.textContent = `Human: ${playerChoice}`;
     const computerChoice = getComputerChoice();
-    // To be added
-    // const winner = determineWinner(playerChoice, computerChoice);
-    // updateScore(winner);
-    // updateMessage(winner, playerChoice, computerChoice);
+    computerDisplay.textContent = `Computer: ${computerChoice}`;
+    const winner = checkWinner(playerChoice, computerChoice);
+    updateScore(winner);
+    updateMessage(winner, playerChoice, computerChoice);
 }
 
 // Function to generate computer random choice 
@@ -39,7 +40,7 @@ function getComputerChoice() {
     const choices = ["rock", "paper", "scissors"];
     const computerChoice = choices[Math.floor(Math.random() * choices.length)];
     console.log(`Computer selected ${computerChoice}`);
-    return computerChoice;
+    return computerChoice; // return choices[computerChoice];
 }
 
 // Function checking who the winner is comparing choices
@@ -51,12 +52,13 @@ function checkWinner(player, computer) {
         (player === "paper" && computer === "rock") ||
         (player === "scissors" && computer === "paper")
     ) {
-        return "Human";
+        return "player";
     } else {
-        return "Computer";
+        return "computer";
     }
 }
 
+// Function to update the scores
 function updateScore(winner) {
     if (winner === 'player') {
         playerScore++;
@@ -64,34 +66,40 @@ function updateScore(winner) {
     } else if (winner === 'computer') {
         computerScore++;
         computerScoreDisplay.textContent = computerScore;
+    } else if (winner === 'tie') {
+        tiedScore++;
+        tiedScoreDisplay.textContent = tiedScore;
     }
     checkGameOver();
 }
 
+// Function to update the display message
+function updateMessage(winner, player, computer) {
+    if (winner === 'tie') {
+        resultMessage.textContent = `It is a tie, you both chose ${player}`;
+    } else if (winner === 'player') {
+        resultMessage.textContent = `Human won! ${player} beats ${computer}`;
+    } else {
+        resultMessage.textContent = `Human lost! ${computer} beats ${player}`;
+    }
+}
 
-
-    //Calculate first to reach 5 games and win
-    // if (playerScore === 5 || computerScore === 5) {
-    //     if (playerScore === computerScore) {
-    //         resultDisplay.textContent = ("Game over Tied");
-    //         resetGame();
-    //         return;
-    //     } else if (playerScore > computerScore) {
-    //         resultDisplay.textContent = ("Game over Human won");
-    //         resetGame();
-    //         return;
-    //     } else {
-    //         resultDisplay.textContent = ("Game over Computer won");
-    //         resetGame();
-    //         return;
-    //     }
-    // }
-
+// Function to check if the game is over with first to 5 points
+function checkGameOver() {
+    if (playerScore >=5 || computerScore >= 5) {
+        const gameOverMessage = playerScore >= 5 ? "Game over, human won!" : "Game over, computer won";
+        resultMessage.textContent = gameOverMessage;
+        // Disable buttons after the gane ends
+        rockButton.disabled = true;
+        paperButton.disabled = true;
+        scissorsButton.disabled = true;
+    }
+}
 
     // Display results after each game
-    // playerDisplay.textContent = `Human: ${playerChoice}`;
-    // computerDisplay.textContent = `Computer: ${computerChoice}`;
-    // resultDisplay.textContent = result;
+    // playerScoreDisplay.textContent = `Human: ${player}`;
+    // computerDisplay.textContent = `Computer: ${computer}`;
+    // resultMessage.textContent = result;
 
     // Allocate scores against results
     // resultDisplay.classList.remove("greenText", "redText")
@@ -112,7 +120,5 @@ function updateScore(winner) {
     //         break;
     // }
 
-// function resetGame() {
-//     console.log("Game is over");
-// }
+
 
