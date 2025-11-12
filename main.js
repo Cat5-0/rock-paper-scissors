@@ -17,7 +17,8 @@ const resultDisplay = document.getElementById("resultDisplay");
 
 const playerScoreDisplay = document.getElementById("playerScoreDisplay");
 const computerScoreDisplay = document.getElementById("computerScoreDisplay");
-const tiedScoreDisplay = document.getElementById("tiedScoreDisplay");
+// const gameOverMessage = document.getElementById("gameOverMessage");
+// const tiedScoreDisplay = document.getElementById("tiedScoreDisplay");
 
 // Add event listeners to the buttons
 rockButton.addEventListener('click', () => playRound('rock'));
@@ -87,38 +88,16 @@ function updateMessage(winner, player, computer) {
 // Function to check if the game is over with first to 5 points
 function checkGameOver() {
     if (playerScore >=5 || computerScore >= 5) {
-        const gameOverMessage = playerScore >= 5 ? "Game over, human won!" : "Game over, computer won";
-        resultMessage.textContent = gameOverMessage;
-        // Disable buttons after the gane ends
+        console.log(`line 89 ${playerScore} and computer ${computerScore}`);
+        const gameOverMessage = playerScore >= 5 ? 'Game over, human won!' : 'Game over, computer won';
+        
+        gameOver.textContent = gameOverMessage;
+        // Disable buttons after the game ends
         rockButton.disabled = true;
         paperButton.disabled = true;
         scissorsButton.disabled = true;
     }
 }
-
-    // Display results after each game
-    // playerScoreDisplay.textContent = `Human: ${player}`;
-    // computerDisplay.textContent = `Computer: ${computer}`;
-    // resultMessage.textContent = result;
-
-    // Allocate scores against results
-    // resultDisplay.classList.remove("greenText", "redText")
-    // switch(result) {
-    //     case "You win!":
-    //         resultDisplay.classList.add("greenText");
-    //         playerScore++;
-    //         playerScoreDisplay.textContent = playerScore;
-    //         break;
-    //     case "You lost":
-    //         resultDisplay.classList.add("redText");
-    //         computerScore++;
-    //         computerScoreDisplay.textContent = computerScore;
-    //         break;
-    //     case "Tied!":
-    //         tiedScore++;
-    //         tiedScoreDisplay.textContent = tiedScore;
-    //         break;
-    // }
 
 
 
