@@ -26,7 +26,7 @@ scissorsButton.addEventListener('click', () => playRound('scissor'));
 
 // Main game function
 function playRound(playerChoice) {
-    console.log(`Player choice ${playerChoice}`)
+    console.log(`Player selected ${playerChoice}`)
     const computerChoice = getComputerChoice();
     // To be added
     // const winner = determineWinner(playerChoice, computerChoice);
@@ -43,21 +43,29 @@ function getComputerChoice() {
 }
 
 // Function checking who the winner is comparing choices
-
 function checkWinner(player, computer) {
     if (player === computer) {
-        return "Tie";
+        return "tie";
     } else if (
         (player === "rock" && computer === "scissors") ||
         (player === "paper" && computer === "rock") ||
         (player === "scissors" && computer === "paper")
     ) {
-        humanScore += 1;
         return "Human";
     } else {
-        computerScore += 1;
         return "Computer";
     }
+}
+
+function updateScore(winner) {
+    if (winner === 'player') {
+        playerScore++;
+        playerScoreDisplay.textContent = playerScore;
+    } else if (winner === 'computer') {
+        computerScore++;
+        computerScoreDisplay.textContent = computerScore;
+    }
+    checkGameOver();
 }
 
 
