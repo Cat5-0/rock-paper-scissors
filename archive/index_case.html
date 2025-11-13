@@ -4,41 +4,24 @@
     <link href="../favicon.ico" type="image/x-icon" rel="icon" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
-    <link rel="stylesheet" href="styles.css" />
-    <title>Rock Paper Scissors</title>
-=======
     <title>Rock Paper Scissors with UI</title>
     <link rel="stylesheet" href="styles.css" /> 
->>>>>>> rps-ui
 </head>
 <body>
     <h1>Rock Paper Scissors</h1>
-    <h3>Winner is first to Score 5</h3>
+
     <div class="choices">
-        <button id="rock">Rock</button>
-        <button id="paper">Paper</button>
-        <button id="scissors">Scissors</button>
+        <button onclick="playGame('rock')">Rock</button>
+        <button onclick="playGame('paper')">Paper</button>
+        <button onclick="playGame('scissors')">Scissors</button>
+        <button class="reset" onclick="resetGame()">Play Again?</button>
     </div>
 
-    <div id="playerDisplay">Player:</div>
+    <div id="playerDisplay">Human:</div>
     <div id="computerDisplay">Computer:</div>
-    <div id="resultMessage">Choose your weapon</div>
-    
-<<<<<<< HEAD
-    <div class="flex-container">
-          <button onclick="playGame()">Start Game</button>
-    </div>
-  
-    
-    <script src="script.js"></script>  
-=======
-    <div id="gameOver">
-        <div id="gameOver"></div>
-    </div>
+    <div id="resultDisplay"></div>
 
-    <p></p>
-    <div class="scoreDisplay">Player Score:
+    <div class="scoreDisplay">Human Score:
         <span id="playerScoreDisplay">0</span>
     </div>
 
@@ -50,9 +33,7 @@
         <span id="tiedScoreDisplay">0</span>
     </div>
 
-    <button id="resetBtn"></button>
-
     <script src="main.js"></script> 
->>>>>>> rps-ui
 </body>
+
 </html>
