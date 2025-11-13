@@ -87,7 +87,7 @@ function updateMessage(winner, player, computer) {
 // Function to check if the game is over with first to 5 points
 function checkGameOver() {
     if (playerScore >=5 || computerScore >= 5) {
-        const gameOverMessage = playerScore >= 5 ? 'Game over, You won!' : 'Game over, computer won';
+        const gameOverMessage = playerScore >= 5 ? 'Game over, player won!' : 'Game over, computer won';
         gameOver.textContent = gameOverMessage;
         resetBtn.textContent = "Play Again?";
         // Disable buttons after the game ends
