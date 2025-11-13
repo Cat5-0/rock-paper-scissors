@@ -76,18 +76,18 @@ function updateScore(winner) {
 // Function to update the display message
 function updateMessage(winner, player, computer) {
     if (winner === 'tie') {
-        resultMessage.textContent = `It is a tie, you both chose ${player}`;
+        resultMessage.textContent = `Tie - you both chose ${player}`;
     } else if (winner === 'player') {
-        resultMessage.textContent = `Player won! ${player} beats ${computer}`;
+        resultMessage.textContent = `Player won - ${player} beats ${computer}`;
     } else {
-        resultMessage.textContent = `Computer won! ${computer} beats ${player}`;
+        resultMessage.textContent = `Computer won - ${computer} beats ${player}`;
     }
 }
 
 // Function to check if the game is over with first to 5 points
 function checkGameOver() {
     if (playerScore >=5 || computerScore >= 5) {
-        const gameOverMessage = playerScore >= 5 ? 'Game over, You won!' : 'Game over, computer won';
+        const gameOverMessage = playerScore >= 5 ? 'Game over - You win!' : 'Game over - computer wins';
         gameOver.textContent = gameOverMessage;
         resetBtn.textContent = "Play Again?";
         // Disable buttons after the game ends
