@@ -1,4 +1,4 @@
-// Rock Paper Scissors UI - Revisit
+// Rock Paper Scissors - Revisit with UI
 
 // Variables to keep track of player scores
 let playerScore = 0;
