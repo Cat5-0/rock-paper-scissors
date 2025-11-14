@@ -1,5 +1,4 @@
 body {
-    background-color: rgb(154, 151, 151);
     font-family: Arial, sans-serif;
     font-weight: bold;
     margin: 0;
@@ -10,7 +9,7 @@ body {
 
 h1 {
     font-size: 2.5rem;
-    color: hsl(0, 0%, 5%);
+    color: hsl(0, 0%, 10%);
 }
 
 .choices {
@@ -22,31 +21,35 @@ h1 {
     min-width: 160px;
     margin: 0 10px;
     border-radius: 250px;
-    background-color: hsl(200, 97%, 25%);
+    background-color: hsl(200, 100%, 50%);
     cursor: pointer;
     transition: background-color 0.5s ease;
 }
 
 .choices button:hover {
-    background-color: hsl(200, 100%, 70%);
+    background-color: hsl(200, 100%,80%);
 }
 
 #gameOver {
-    color: greenyellow;
+    color: black;
     font-size: 2.5rem;
     margin: 20px 0 30px;
 }
 
 #resetBtn {
-    font-size: 1rem;
+    font-size: 1.5rem;
     min-width: 160px;
     margin: 0 10px;
     border-radius: 250px;
-    background-color: hsl(200, 97%, 25%);
+    background-color: hsl(200, 100%, 50%);
     cursor: pointer;
     transition: background-color 0.5s ease;
+    
 }
 
+#resetBtn:hover {
+    background-color: hsl(200, 100%,80%);
+}
 #resultMessage {
     font-size: 1rem;
     margin: 20px 0 30px;
@@ -57,9 +60,9 @@ h1 {
 }
 
 .greenText, #playerScoreDisplay {
-    color: rgb(1, 181, 1);
+    color: blue;
 }
 
 .redText, #computerScoreDisplay {
-    color: rgb(205, 0, 0);
+    color: blue;
 }
